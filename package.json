@@ -1,22 +1,26 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-tailwind-template",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
+  "description": "A minimal Electron + TailwindCSS application",
+  "main": "./src/main.js",
   "scripts": {
-    "start": "electron ."
+    "dev": "concurrently -n electron,tailwind -c green,cyan \"electron .\" \"npx @tailwindcss/cli -i ./src/input.css -o ./src/styles.css --watch\""
   },
-  "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
+    "Tailwind",
+    "template",
+    "boilerplate",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "G.H Design",
   "license": "CC0-1.0",
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "electron": "^35.2.1"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.4",
+    "tailwindcss": "^4.1.4"
   }
 }
